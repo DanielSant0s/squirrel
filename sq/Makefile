@@ -1,5 +1,7 @@
 SQUIRREL= ..
 
+include $(PS2SDK)/samples/Makefile.pref
+include $(PS2SDK)/samples/Makefile.eeglobal
 
 OUT= $(SQUIRREL)/bin/sq
 INCZ= -I$(SQUIRREL)/include -I. -I$(SQUIRREL)/sqlibs
@@ -9,6 +11,9 @@ LIB= -lsquirrel -lsqstdlib
 OBJS= sq.o
 
 SRCS= sq.c
+
+ps2:
+	$(EE_CXX) -O2 -fno-exceptions -fno-rtti -o $(OUT) $(SRCS) $(INCZ) $(LIBZ) $(LIB)
 
 
 sq32:

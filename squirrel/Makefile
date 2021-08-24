@@ -1,5 +1,7 @@
 SQUIRREL= ..
 
+include $(PS2SDK)/samples/Makefile.pref
+include $(PS2SDK)/samples/Makefile.eeglobal
 
 CC?= gcc
 OUT?= $(SQUIRREL)/lib/libsquirrel.a
@@ -36,6 +38,11 @@ SRCS= \
 	sqclass.cpp
 
 
+ps2:
+	$(EE_CC) -O2 -fno-exceptions -fno-rtti -Wall -fno-strict-aliasing -c $(SRCS) $(INCZ) $(DEFS)
+	$(EE_AR) rc $(OUT) *.o
+	rm *.o
+	
 
 sq32:
 	$(CC) -O2 -fno-exceptions -fno-rtti -Wall -fno-strict-aliasing -c $(SRCS) $(INCZ) $(DEFS)

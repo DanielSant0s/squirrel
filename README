@@ -1,3 +1,7 @@
+-- Squirrel programming language port for PS2 --
+
+(To compile it for PS2, just type "make ps2" with PS2SDK installed)
+
 The programming language SQUIRREL 3.1 stable
 
 --------------------------------------------------

@@ -2,6 +2,11 @@
 SQUIRREL=.
 MAKE=make
 
+ps2: folders
+	cd squirrel; $(MAKE) ps2
+	cd sqstdlib; $(MAKE) ps2
+	cd sq; $(MAKE) ps2
+
 sq32: folders
 	cd squirrel; $(MAKE)
 	cd sqstdlib; $(MAKE)
